@@ -43,7 +43,6 @@ const station_desktop = {
                     type: 'LineGraph',
                     query: 'station_revenue',
                     dataFunction: 'getRevenueOrEarnings',
-                    tooltip: 'showTooltip',
                     title: 'Revenue',
                     autoRefresh: {
                       query: 'station_revenue_subscript'
@@ -68,7 +67,7 @@ const station_desktop = {
                      title: 'Program Performance'
                   },
                   {
-                     type: 'Radar',
+                     type: 'HeatMap',
                      query: 'defaultQuery'
                   }
               ]
@@ -90,6 +89,7 @@ const station_desktop = {
                   {
                      type: 'LineGraph',
                      query: 'defaultQuery',
+                     tooltip: 'showTooltip',
                      dataFunction: 'getRevenueOrEarnings',
                   }
               ]

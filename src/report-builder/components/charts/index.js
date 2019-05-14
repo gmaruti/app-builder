@@ -6,6 +6,7 @@ import Summary from './Summary'
 import StackedBarGraph from './StackedBarGraph'
 import SunBurst from './SunBurst'
 import Radar from './Radar'
+import HeatMap from './HeatMap'
 
 const charts = {
   LineGraph,
@@ -15,7 +16,8 @@ const charts = {
   Summary,
   StackedBarGraph,
   SunBurst,
-  Radar
+  Radar,
+  HeatMap
 }
 
 export default charts;

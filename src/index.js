@@ -14,12 +14,12 @@ import { getMainDefinition } from 'apollo-utilities'
 import appConfig from './appConfig'
 
 const httpLink = createHttpLink({
-  uri: `${appConfig.serverURL}:4000`,
+  uri: `http://localhost:4000`,
 })
 
 
 const wsLink = new WebSocketLink({
-  uri: `ws://${appConfig.serverIP}:4000`,
+  uri: `ws://localhost:4000`,
   options: {
     reconnect: true
   },

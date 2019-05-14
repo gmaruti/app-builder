@@ -13,6 +13,7 @@ import Empty from '../report-builder/components/rows/Empty'
 import StackedBarGraph from '../report-builder/components/charts/StackedBarGraph'
 import SunBurst from '../report-builder/components/charts/SunBurst'
 import Radar from '../report-builder/components/charts/Radar'
+import HeatMap from '../report-builder/components/charts/HeatMap'
 
 import Report from './components/Report'
 
@@ -37,6 +38,7 @@ class App extends Component {
             <Route exact path="/stack" component={StackedBarGraph} />
             <Route exact path="/sun" component={SunBurst} />
             <Route exact path="/radar" component={Radar} />
+            <Route exact path="/tree" component={HeatMap} />
 
             <Route path='/report/*' component={Report} />
 

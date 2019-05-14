@@ -1,4 +1,5 @@
 import axios from 'axios'
+import appConfig from '../../appConfig'
 
 const getRevenueOrEarnings = (data) => {
   return (data.station.revenue || data.station.earnings || {}).data || [];
@@ -6,7 +7,7 @@ const getRevenueOrEarnings = (data) => {
 
 async function showTooltip(tooltip) {
   if (!tooltip || !tooltip.label || !tooltip.label.attr) return '';
-  const res = await axios.get(`http://localhost:8080/api/station/revenue/detail?month=${this.x}`);
+  const res = await axios.get(`${appConfig.serverURL}:8080/api/station/revenue/detail?month=${this.x}`);
   const detail = res.data;
   let tooltipStr = `Details for <b>${this.x}</b><br/><br/>`;
   detail.forEach((item) => {

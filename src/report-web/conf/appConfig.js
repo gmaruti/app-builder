@@ -13,7 +13,9 @@ const appConfig = {
     desktop: '28px',
     mobile: '18px',
     tablet: '20px'
-  }
+  },
+  serverURL : 'http://54.209.121.90',
+  serverIP: '54.209.121.90'
 }
 
 export default appConfig;

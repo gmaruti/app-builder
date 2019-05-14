@@ -44,10 +44,7 @@ const program_desktop = {
                     query: 'station_revenue',
                     dataFunction: 'getRevenueOrEarnings',
                     tooltip: 'showTooltip',
-                    title: 'Revenue',
-                    autoRefresh: {
-                      query: 'station_revenue_subscript'
-                    }
+                    title: 'Revenue'
                 },
                 {
                     type: 'Header',

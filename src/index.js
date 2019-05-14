@@ -19,7 +19,7 @@ const httpLink = createHttpLink({
 
 
 const wsLink = new WebSocketLink({
-  uri: `ws://${appConfig.IP}:4000`,
+  uri: `ws://${appConfig.serverIP}:4000`,
   options: {
     reconnect: true
   },

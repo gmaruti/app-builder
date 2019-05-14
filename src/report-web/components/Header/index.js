@@ -11,8 +11,8 @@ class Header extends Component {
     return (
       <div style={{background:'white', height:`${height}`, paddingLeft:'0px'}}>
         <span style={{padding:'10px',fontSize:`${fontSize}`, fontWeight:'bold'}}>TEGNA</span>
-        <span style={{margin:'2%'}}><a style={{textDecaration: 'none'}} href=`${appConfig.serverURL}:3000/report/station`> Station</a></span>
-        <span style={{margin:'2%'}}><a style={{textDecaration: 'none'}} href=``${appConfig.serverURL}/report/program`>Program</a></span>
+        <span style={{margin:'2%'}}><a style={{textDecaration: 'none'}} href={`${appConfig.serverURL}:3000/report/station`}> Station</a></span>
+        <span style={{margin:'2%'}}><a style={{textDecaration: 'none'}} href={`${appConfig.serverURL}:3000/report/program`}>Program</a></span>
         <span style={{margin:'2%'}}>Advertisers</span>
         <span style={{margin:'2%'}}>Plan</span>
         {mediaType !=='tablet' && mediaType !=='mobile' && <span style={{margin:'2%'}}>Rate Card</span>}

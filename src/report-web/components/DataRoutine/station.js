@@ -1,5 +1,5 @@
 import axios from 'axios'
-import appConfig from '../../appConfig'
+import appConfig from '../../../appConfig'
 
 const getRevenueOrEarnings = (data) => {
   return (data.station.revenue || data.station.earnings || {}).data || [];

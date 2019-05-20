@@ -1,50 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './report-web/styles/index.css'
-import App from './report-web/App'
-import * as serviceWorker from './serviceWorker'
-import { ApolloProvider } from 'react-apollo'
-import { ApolloClient } from 'apollo-client'
-import { createHttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { BrowserRouter } from 'react-router-dom'
-import { split } from 'apollo-link'
-import { WebSocketLink } from 'apollo-link-ws'
-import { getMainDefinition } from 'apollo-utilities'
-import appConfig from './appConfig'
+import Station from '../report-builder/components/Station'
+import LineGraph from '../report-builder/components/charts/LineGraph'
+import BarGraph from '../report-builder/components/charts/BarGraph'
+import Overview from '../report-builder/components/charts/Overview'
+import DataTable from '../report-builder/components/charts/DataTable'
+import Summary from '../report-builder/components/charts/Summary'
+import OneColumn from '../report-builder/components/rows/OneColumn'
+import TwoColumn from '../report-builder/components/rows/TwoColumn'
+import ThreeColumn from '../report-builder/components/rows/ThreeColumn'
+import Empty from '../report-builder/components/rows/Empty'
+import StackedBarGraph from '../report-builder/components/charts/StackedBarGraph'
+import SunBurst from '../report-builder/components/charts/SunBurst'
+import Radar from '../report-builder/components/charts/Radar'
+import HeatMap from '../report-builder/components/charts/HeatMap'
+import ReportLayout from '../report-generator/ReportLayout'
 
-const httpLink = createHttpLink({
-  uri: `${appConfig.serverURL}:4000`,
-})
-
-
-const wsLink = new WebSocketLink({
-  uri: `ws://${appConfig.serverIP}:4000`,
-  options: {
-    reconnect: true
-  },
-})
-
-const link = split(
-  ({ query }) => {
-    const { kind, operation } = getMainDefinition(query)
-    return kind === 'OperationDefinition' && operation === 'subscription'
-  },
-  wsLink,
-  httpLink,
-)
-
-const client = new ApolloClient({
-  link,
-  cache: new InMemoryCache(),
-})
-
-ReactDOM.render(
-  <BrowserRouter>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </BrowserRouter>,
-  document.getElementById('root'),
-)
-serviceWorker.unregister()
+export {
+  Station,
+  LineGraph,
+  BarGraph,
+  Overview,
+  DataTable,
+  Summary,
+  OneColumn,
+  TwoColumn,
+  ThreeColumn,
+  Empty,
+  StackedBarGraph,
+  SunBurst,
+  Radar,
+  HeatMap,
+  ReportLayout
+}
